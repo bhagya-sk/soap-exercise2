@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://webservice.productwebservice.reactiveworks.com/"
+	attributeFormDefault="unqualified" elementFormDefault="unqualified"
+	targetNamespace="http://webservice.productwebservice.reactiveworks.com/">
+
+	<xs:element name="addProducts" type="tns:products" />
+	<!-- <xs:element name="updateProduct" type="tns:updateProduct" /> -->
+	<xs:element name="updateProductResponse"
+		type="xs:string" />
+	<xs:element name="addProductsResponse"
+		type="xs:string" />
+
+	<xs:element name="deleteProduct" type="tns:deleteProduct" />
+
+	<xs:element name="deleteProductResponse"
+		type="xs:string" />
+
+	<xs:element name="getProducts" type="tns:getProducts" />
+
+	<xs:element name="getProductsResponse"
+		type="tns:getProductsResponse" />
+<xs:element name="updateProduct">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element minOccurs="0" name="productId" type="xs:string" />
+			<xs:element minOccurs="0" name="productName" type="xs:string" />
+			<xs:element minOccurs="0" name="productCategory" type="xs:string" />
+			<xs:element minOccurs="0" name="price"
+				type="xs:double" />
+			<xs:element minOccurs="0" name="availableCities" >
+			<xs:simpleType>
+			 <xs:list itemType="xs:string"/>
+			</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>	
+	<xs:complexType name="products">
+
+		<xs:sequence>
+
+			<xs:element maxOccurs="unbounded" minOccurs="0"
+				name="product" type="tns:product" />
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:complexType name="product">
+
+		<xs:sequence>
+
+			<xs:element minOccurs="0" name="productId"
+				type="xs:string" />
+
+			<xs:element minOccurs="0" name="productName"
+				type="xs:string" />
+
+			<xs:element minOccurs="0" name="productCategory"
+				type="xs:string" />
+
+			<xs:element minOccurs="0" name="price" type="xs:int" />
+
+			<!-- <xs:element minOccurs="0" name="availableCities"> <xs:complexType> 
+				<xs:sequence> <xs:element minOccurs="0" maxOccurs="unbounded" name="city" 
+				type="xs:string"></xs:element> </xs:sequence> </xs:complexType> </xs:element> -->
+
+			<xs:element name="availableCities">
+
+				<xs:simpleType>
+
+					<xs:list itemType="xs:string" />
+
+				</xs:simpleType>
+
+			</xs:element>
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+	
+	<xs:complexType name="getProducts">
+
+		<xs:sequence>
+
+			<xs:element minOccurs="0" name="productId"
+				type="xs:string" />
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:complexType name="getProductsResponse">
+
+		<xs:sequence>
+
+			<xs:element maxOccurs="unbounded" minOccurs="0"
+				name="product" type="tns:product" />
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:complexType name="deleteProduct">
+
+		<xs:sequence>
+
+			<xs:element minOccurs="0" name="productId"
+				type="xs:string" />
+            
+		</xs:sequence>
+
+	</xs:complexType>
+
+
+
+	<xs:element name="ProductWebServiceFailureException"
+		type="tns:ProductWebServiceFailureException" />
+
+	<xs:complexType name="ProductWebServiceFailureException">
+
+		<xs:sequence>
+
+			<xs:element minOccurs="0" name="message" type="xs:string" />
+
+		</xs:sequence>
+
+	</xs:complexType>
+	
+	<xs:element name="ProductNotAvailableException"
+		type="tns:ProductNotAvailableException" />
+
+	<xs:complexType name="ProductNotAvailableException">
+
+		<xs:sequence>
+
+			<xs:element minOccurs="0" name="message" type="xs:string" />
+
+		</xs:sequence>
+
+	</xs:complexType>
+	
+	<xs:element name="ProductIDMissingException"
+		type="tns:ProductIDMissingException" />
+
+	<xs:complexType name="ProductIDMissingException">
+
+		<xs:sequence>
+
+			<xs:element minOccurs="0" name="message" type="xs:string" />
+
+		</xs:sequence>
+
+	</xs:complexType>
+	
+
+</xs:schema>

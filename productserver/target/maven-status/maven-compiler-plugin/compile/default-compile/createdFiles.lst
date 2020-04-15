@@ -1,0 +1,6 @@
+com\reactiveworks\productwebservice\webservice\Product.class
+com\reactiveworks\productwebservice\dao\exceptions\DaoOperationFailureException.class
+com\reactiveworks\productwebservice\webservice\Products.class
+com\reactiveworks\productwebservice\webservice\package-info.class
+com\reactiveworks\productwebservice\webservice\ProductIDMissingException.class
+com\reactiveworks\productwebservice\dao\ProductDaoFactory.class

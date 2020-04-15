@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ProductWebServiceService" targetNamespace="http://webservice.productwebservice.reactiveworks.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservice.productwebservice.reactiveworks.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="http://webservice.productwebservice.reactiveworks.com/" schemaLocation="productwebservice_schema.xsd"/>
+		</schema>
+  </wsdl:types>
+  <wsdl:message name="getProductsResponse">
+    <wsdl:part name="parameters" element="tns:getProductsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateProductResponse">
+    <wsdl:part name="parameters" element="tns:updateProductResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addProducts">
+    <wsdl:part name="products" element="tns:addProducts">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProducts">
+    <wsdl:part name="parameters" element="tns:getProducts">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProductNotAvailableException">
+    <wsdl:part name="parameters" element="tns:ProductNotAvailableException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteProduct">
+    <wsdl:part name="parameters" element="tns:deleteProduct">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProductIDMissingException">
+    <wsdl:part name="parameters" element="tns:ProductIDMissingException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteProductResponse">
+    <wsdl:part name="parameters" element="tns:deleteProductResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProductWebServiceFailureException">
+    <wsdl:part name="ProductWebServiceFailureException" element="tns:ProductWebServiceFailureException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addProductsResponse">
+    <wsdl:part name="parameters" element="tns:addProductsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateProduct">
+    <wsdl:part name="parameters" element="tns:updateProduct">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ProductWebService">
+    <wsdl:operation name="addProducts">
+      <wsdl:input name="addProducts" message="tns:addProducts">
+    </wsdl:input>
+      <wsdl:output name="addProductsResponse" message="tns:addProductsResponse">
+    </wsdl:output>
+      <wsdl:fault name="ProductWebServiceFailureException" message="tns:ProductWebServiceFailureException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <wsdl:input name="getProducts" message="tns:getProducts">
+    </wsdl:input>
+      <wsdl:output name="getProductsResponse" message="tns:getProductsResponse">
+    </wsdl:output>
+      <wsdl:fault name="ProductWebServiceFailureException" message="tns:ProductWebServiceFailureException">
+    </wsdl:fault>
+      <wsdl:fault name="ProductNotAvailableException" message="tns:ProductNotAvailableException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <wsdl:input name="deleteProduct" message="tns:deleteProduct">
+    </wsdl:input>
+      <wsdl:output name="deleteProductResponse" message="tns:deleteProductResponse">
+    </wsdl:output>
+      <wsdl:fault name="ProductWebServiceFailureException" message="tns:ProductWebServiceFailureException">
+    </wsdl:fault>
+      <wsdl:fault name="ProductIDMissingException" message="tns:ProductIDMissingException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <wsdl:input name="updateProduct" message="tns:updateProduct">
+    </wsdl:input>
+      <wsdl:output name="updateProductResponse" message="tns:updateProductResponse">
+    </wsdl:output>
+      <wsdl:fault name="ProductWebServiceFailureException" message="tns:ProductWebServiceFailureException">
+    </wsdl:fault>
+      <wsdl:fault name="ProductIDMissingException" message="tns:ProductIDMissingException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProductWebServiceServiceSoapBinding" type="tns:ProductWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addProducts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addProducts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addProductsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductWebServiceFailureException">
+        <soap:fault name="ProductWebServiceFailureException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getProducts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductWebServiceFailureException">
+        <soap:fault name="ProductWebServiceFailureException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ProductNotAvailableException">
+        <soap:fault name="ProductNotAvailableException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteProduct">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductWebServiceFailureException">
+        <soap:fault name="ProductWebServiceFailureException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ProductIDMissingException">
+        <soap:fault name="ProductIDMissingException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateProduct">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductWebServiceFailureException">
+        <soap:fault name="ProductWebServiceFailureException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ProductIDMissingException">
+        <soap:fault name="ProductIDMissingException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductWebServiceService">
+    <wsdl:port name="ProductWebServicePort" binding="tns:ProductWebServiceServiceSoapBinding">
+      <soap:address location="http://localhost:8080/productserver/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
